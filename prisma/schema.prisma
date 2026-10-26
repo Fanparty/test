@@ -1,0 +1,17 @@
+// Starter schema. The only model below exists so the setup check can prove
+// that your database accepts writes. You are free to delete it and design
+// your own models when the session starts.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model SetupCheck {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,25 @@
+{
+  "name": "sde-intern-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Setup-only starter for the SDE Intern build round. Contains no application logic.",
+  "scripts": {
+    "check": "node scripts/check.js",
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

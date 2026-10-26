@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Starter</title>
+  <style>body{font-family:system-ui,sans-serif;max-width:40rem;margin:3rem auto;padding:0 1rem}</style>
+</head>
+<body>
+  <h1>Starter is running</h1>
+  <p id="status">Checking database...</p>
+  <script>
+    fetch('/api/health').then(r => r.json()).then(d => {
+      document.getElementById('status').textContent =
+        d.ok ? 'Server and database are working.' : 'Server is up, but the database is unreachable: ' + d.error;
+    }).catch(() => { document.getElementById('status').textContent = 'Could not reach the server.'; });
+  </script>
+</body>
+</html>
